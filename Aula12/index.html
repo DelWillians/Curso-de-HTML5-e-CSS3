@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colocando Imagens Adaptáveis conforme a tela</title>
+  </head>
+  <body>
+    <h1>Imagens adaptáveis em diversos dispositivos</h1>
+    <p>Aumente e diminua a página para alterar o tamanho</p>
+    <picture>
+      <source
+        media="(max-width: 730px)"
+        srcset="imagens/foto-p.png"
+        type="image/png"
+      />
+      <source
+        media="(max-width:1030px )"
+        srcset="imagens/foto-m.png"
+        type="image/png"
+      />
+      <img src="imagens/foto-g.png" alt="Imagem Flexível" />
+    </picture>
+  </body>
+</html>
+
+<!-- Utilizando a tag <picture> podemos criar "sources" dentro dela, e não somente carregar uma imagem.-->
+<!-- Utilizando a tag <img> carregamos uma imagem.-->
+<!-- Em "src=" definimos o caminho de onde se encontra uma imagem.-->
+<!-- Em "alt=" definimos uma mensagem se acaso a imagem não for carregada.-->
+<!-- Logo, podemos definir uma imagem de começo, utilizaremos a maior.-->
+
+<!-- Para fazermos a imagem ser adaptável, utilizamos a tag <source>-->
+<!-- Neste caso teremos: 
+      media="(max-width:1030px )"
+      srcset="imagens/foto-m.png"
+      type="image/png"-->
+<!-- Max-width, refere-se a se a imagem carregada for menor que 1030px, você carregará outra imagem, e se passar de 1030px, a imagem será a primeira carregada. Neste exemplo, foi usado uma imagem maior de início, e conforme a tela diminui, a imagem troca-->
+<!-- "srcset" refere-se a imagem que será substituida se caso a imagem inicial for menor que o definido em "max-width", no nosso caso, menor que 1030px-->
+<!-- "type" definimos que a será uma "image/png"-->
